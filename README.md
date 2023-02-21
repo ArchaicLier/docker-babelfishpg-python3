@@ -46,7 +46,7 @@ For use in t-sql use [example_python.sql](https://github.com/ArchaicLier/docker-
 
 Then you call it from T-SQL as:
 ```sql
-SELECT * FROM master.hello_python();
+SELECT * FROM master.dbo.hello_python();
 ```
 
 ### Installing pip
