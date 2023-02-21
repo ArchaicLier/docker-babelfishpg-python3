@@ -1,6 +1,6 @@
 create extension if not exists plpython3u ;
 
-create function if not exists hello_python()
+create function or replace hello_python()
 	returns setof text
 as $$
 	return('Hello','PostgreSQL','!')
