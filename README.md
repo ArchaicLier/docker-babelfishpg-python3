@@ -44,7 +44,7 @@ SELECT * FROM hello_python();
 
 For use in t-sql use [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) by connected to babelfish_db database and master_dbo (or any %database%_dbo) schema on PostgreSQL port
 
-Then you call it from T-SQL as:
+Then you can call it from T-SQL as:
 ```sql
 SELECT * FROM master.dbo.hello_python();
 ```
