@@ -60,13 +60,13 @@ docker exec -it -u 0 %container_name% bash
 To install pip :
 
 ```sh
-apt install python3-pip
+apt update && apt install python3-pip
 ```
 
 Then you can install some python libs and use it in your plpython3u functions:
 
 ```sh
-pip3 install numpy
+python3.9 -m pip install numpy
 ```
 
 ### Advanced Setup
