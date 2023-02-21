@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 
 # Specify babelfish version by using a tag from https://github.com/babelfish-for-postgresql/babelfish-for-postgresql/tags
-ARG BABELFISH_VERSION=BABEL_2_2_0__PG_14_5
+ARG BABELFISH_VERSION=BABEL_2_3_0__PG_14_6
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV BABELFISH_HOME=/opt/babelfish
@@ -18,7 +18,8 @@ RUN apt update && apt install -y --no-install-recommends \
 	curl openjdk-8-jre openssl \
 	g++ libssl-dev python-dev libpq-dev \
 	pkg-config libutfcpp-dev \
-	gnupg unixodbc-dev net-tools unzip wget
+	gnupg unixodbc-dev net-tools unzip wget \
+	python3 libpython3.8 python3-dev
 
 # Download babelfish sources
 WORKDIR /workplace
@@ -65,7 +66,10 @@ RUN ./configure CFLAGS="-ggdb" \
 	--with-uuid=ossp \
 	--enable-nls \
 	--with-libxslt \
-	--with-icu
+	--with-icu \
+	--with-python \
+	PYTHON=/bin/python3.8
+	
 					
 RUN make DESTDIR=${BABELFISH_HOME}/ 2>error.txt && make install
 
@@ -105,7 +109,8 @@ COPY --from=0 ${BABELFISH_HOME} .
 # Install runtime dependencies
 RUN apt update && apt install -y --no-install-recommends \
 	libssl1.1 openssl libldap-2.4-2 libxml2 libpam0g uuid libossp-uuid16 \
-	libxslt1.1 libicu66 libpq5 unixodbc
+	libxslt1.1 libicu66 libpq5 unixodbc \
+	python3 libpython3.8
 
 # Enable data volume
 ENV BABELFISH_DATA=/data/babelfish

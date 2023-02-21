@@ -1,5 +1,8 @@
-# docker-babelfishpg
+# docker-babelfishpg-python3
 [Docker](https://www.docker.com/) image for [Babelfish for PostgreSQL](https://babelfishpg.org/).
+
+Fork of [jonathanpotts/docker-babelfishpg](https://github.com/jonathanpotts/docker-babelfishpg)
+
 
 Babelfish for PostgreSQL is a collection of [extensions](https://github.com/babelfish-for-postgresql/babelfish_extensions) for [PostgreSQL](https://www.postgresql.org/) that enable it to use the [Tabular Data Stream (TDS) protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-tds) and [Transact-SQL (T-SQL)](https://docs.microsoft.com/sql/t-sql/language-reference) allowing apps designed for [Microsoft SQL Server](https://docs.microsoft.com/sql/sql-server) to utilize PostgreSQL as their database. For more details, see ["Goodbye Microsoft SQL Server, Hello Babelfish"](https://aws.amazon.com/blogs/aws/goodbye-microsoft-sql-server-hello-babelfish/) from the AWS News Blog.
 
@@ -9,11 +12,21 @@ Babelfish for PostgreSQL is a collection of [extensions](https://github.com/babe
 
 To create a new container, run:
 
-`docker run -d -p 1433:1433 jonathanpotts/babelfishpg`
+`docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3`
+
+To create a new container with multi-db:
+
+`docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3 -m multi-db`
+
+### Example Python3
+
+```
+Soon
+```
 
 ### Example Data
 
-Use the [example_data.sql](https://github.com/jonathanpotts/docker-babelfishpg/blob/main/example_data.sql) script to populate the database with example data.
+Use the [example_data.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_data.sql) script to populate the database with example data.
 
 You can then query the database using commands such as:
 
