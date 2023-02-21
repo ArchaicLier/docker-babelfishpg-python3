@@ -59,7 +59,7 @@ To connect by root to docker use following command:
 docker exec -it -u 0 %container_name% bash
 ```
 
-To install pip :
+Then install pip :
 
 ```sh
 apt update && apt install python3-pip
