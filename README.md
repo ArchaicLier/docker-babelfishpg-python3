@@ -18,12 +18,6 @@ To create a new container with multi-db:
 
 `docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3 -m multi-db`
 
-### Example Python3
-
-```
-Soon
-```
-
 ### Example Data
 
 Use the [example_data.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_data.sql) script to populate the database with example data.
@@ -36,6 +30,43 @@ SELECT * FROM example_db.authors;
 
 ```sql
 SELECT * FROM example_db.books;
+```
+
+### Example Python
+
+Use the [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) for create simple "Hello world!" functions by first connecting to the PostgreSQL port
+
+Then you can call it as:
+
+```sql
+SELECT * FROM hello_python();
+```
+
+For use in t-sql use [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) by connected to babelfish_db database and master_dbo (or any %database%_dbo) schema on PostgreSQL port
+
+Then you call it from T-SQL as:
+```sql
+SELECT * FROM master.hello_python();
+```
+
+### Installing pip
+
+To connect by root to docker use following command:
+
+```cmd
+docker exec -it -u 0 %container_name% bash
+```
+
+To install pip :
+
+```sh
+apt install python3-pip
+```
+
+Then you can install some python libs and use it in your plpython3u functions:
+
+```sh
+pip3 install numpy
 ```
 
 ### Advanced Setup
@@ -59,7 +90,7 @@ If you are hosting the container on your local machine, the server name is `loca
 
 Use SQL Server Authentication mode for login.
 
-The default login for Babelfish is:
+The default login for Babelfish and PostgreSQL is:
 
 * **Username:** `babelfish_user`
 * **Password:** `12345678`
@@ -74,11 +105,11 @@ Assuming Babelfish is hosted on the local machine, using the default settings, a
 
 `Data Source=localhost;Initial Catalog=example_db;Persist Security Info=true;User ID=babelfish_user;Password=12345678`
 
-## Data Volume
+## Data Volume 
 
 Database data is stored in the `/data` volume.
 
-## Building Docker Image
+## Building Docker Image 
 
 **NOTE: Because Git on Windows changes line-endings from LF to CRLF by default, make sure that `start.sh` has LF line-endings before building or an error will occur when running a container from the image.**
 
