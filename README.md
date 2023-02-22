@@ -16,9 +16,17 @@ To create a new container, run:
 
 `docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3`
 
+or
+
+`docker run -d -p 1433:1433 -p 5000:5432 ghcr.io/archaiclier/docker-babelfishpg-python3:main`
+
 To create a new container with multi-db:
 
 `docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3 -m multi-db`
+
+or
+
+`docker run -d -p 1433:1433 -p 5000:5432 ghcr.io/archaiclier/docker-babelfishpg-python3:main -m multi-db`
 
 ### Example Data
 
