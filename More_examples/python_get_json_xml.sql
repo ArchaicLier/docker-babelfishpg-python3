@@ -10,16 +10,15 @@ create or replace function get_json(url_to_json text)
 as $$
 	import urllib.request
 	from urllib.error import URLError 
-	import json
 	
 	try:
 		with urllib.request.urlopen(url_to_json) as json_file:
-			return json.dumps(json.load(json_file))
+			return json_file.read().decode('UTF-8')
 	except URLError:
 		#If certificate dont installed
 		import ssl
 		with urllib.request.urlopen(url_to_json,context=ssl._create_unverified_context()) as json_file:
-			return json.dumps(json.load(json_file))
+			return json_file.read().decode('UTF-8')
 $$ language plpython3u;
 
 select * from
@@ -31,8 +30,7 @@ create or replace function get_xml(url_to_xml text)
 as $$
 	import urllib.request
 	from urllib.error import URLError 
-	import xml.etree.ElementTree as ET
-	
+
 	try:
 		with urllib.request.urlopen(url_to_xml) as xml_file:
 			return xml_file.read().decode('UTF-8')
