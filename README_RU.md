@@ -6,7 +6,7 @@
 Форк репозитория [jonathanpotts/docker-babelfishpg](https://github.com/jonathanpotts/docker-babelfishpg)
 
 
-Babelfish для PostgreSQL это набор [расширений](https://github.com/babelfish-for-postgresql/babelfish_extensions) для [PostgreSQL](https://www.postgresql.org/), которые позволяют ему использовать протокол  [Tabular Data Stream (TDS) protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-tds) и [Transact-SQL (T-SQL)](https://docs.microsoft.com/sql/t-sql/language-reference) позволяя приложениям, разработанным для [Microsoft SQL Server](https://docs.microsoft.com/sql/sql-server) использовать PostgreSQL в качестве своей базы данных. Дополнительные сведения см. в статье ["Goodbye Microsoft SQL Server, Hello Babelfish"](https://aws.amazon.com/blogs/aws/goodbye-microsoft-sql-server-hello-babelfish/) в новостном блоге AWS.
+Babelfish для PostgreSQL это набор [расширений](https://github.com/babelfish-for-postgresql/babelfish_extensions) для [PostgreSQL](https://www.postgresql.org/), которые позволяют ему использовать протокол  [Tabular Data Stream (TDS) protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-tds) и [Transact-SQL (T-SQL)](https://docs.microsoft.com/sql/t-sql/language-reference), позволяя приложениям, разработанным для [Microsoft SQL Server](https://docs.microsoft.com/sql/sql-server) использовать PostgreSQL в качестве своей базы данных. Дополнительные сведения см. в статье ["Goodbye Microsoft SQL Server, Hello Babelfish"](https://aws.amazon.com/blogs/aws/goodbye-microsoft-sql-server-hello-babelfish/) в новостном блоге AWS.
 
 ## Быстрый старт
 
@@ -77,7 +77,7 @@ python3.9 -m pip install numpy
 
 Для инициализации с пользовательским паролем, добавьте `-p my_password` к `docker run` команде где `my_password` желаемый пароль.
 
-TДля инициализации с пользовательским наименование базы данных, добавьте `-d my_database` к `docker run` команде, где `my_database` желаемое наименование базы данных. **Это имя базы данных, которую Babelfish для PostgreSQL использует для внутреннего хранения данных и недоступна через TDS.**
+Для инициализации с пользовательским наименование базы данных, добавьте `-d my_database` к `docker run` команде, где `my_database` желаемое наименование базы данных. **Это имя базы данных, которую Babelfish для PostgreSQL использует для внутреннего хранения данных и недоступна через TDS.**
 
 #### Режим миграции
 

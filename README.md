@@ -36,7 +36,7 @@ SELECT * FROM example_db.books;
 
 ### Example Python
 
-Use the [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) for create simple "Hello world!" functions by first connecting to the PostgreSQL port
+Use the [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) script for create simple "Hello world!" functions by first connecting to the PostgreSQL port
 
 Then you can call it as:
 
@@ -44,7 +44,7 @@ Then you can call it as:
 SELECT * FROM hello_python();
 ```
 
-For use in t-sql use [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) by connected to babelfish_db database and master_dbo (or any %database%_dbo) schema on PostgreSQL port
+For use in t-sql use [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) script by connected to babelfish_db database and master_dbo (or any %database%_dbo) schema on PostgreSQL port
 
 Then you can call it from T-SQL as:
 ```sql
@@ -53,7 +53,7 @@ SELECT * FROM master.dbo.hello_python();
 
 ### Installing pip
 
-To connect by root to docker use following command:
+For connect by root to docker use following command:
 
 ```cmd
 docker exec -it -u 0 %container_name% bash
