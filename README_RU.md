@@ -16,9 +16,17 @@ Babelfish для PostgreSQL это набор [расширений](https://git
 
 `docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3`
 
+или
+
+`docker run -d -p 1433:1433 -p 5000:5432 ghcr.io/archaiclier/docker-babelfishpg-python3:main`
+
 Чтобы создать новый контейнер с multi-db:
 
 `docker run -d -p 1433:1433 -p 5000:5432 1i3r/babelfishpg-python3 -m multi-db`
+
+или
+
+`docker run -d -p 1433:1433 -p 5000:5432 ghcr.io/archaiclier/docker-babelfishpg-python3:main -m multi-db`
 
 ### Пример данных
 
