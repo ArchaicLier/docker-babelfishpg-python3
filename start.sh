@@ -53,6 +53,5 @@ if [ ! -f ${BABELFISH_DATA}/postgresql.conf ]; then
 		-c "CALL SYS.INITIALIZE_BABELFISH('${USERNAME}');"
 	./pg_ctl -D ${BABELFISH_DATA}/ stop
 fi
-
 # Start postgres engine
 ./postgres -D ${BABELFISH_DATA}/ -i
