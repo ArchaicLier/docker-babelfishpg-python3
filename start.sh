@@ -53,14 +53,5 @@ if [ ! -f ${BABELFISH_DATA}/postgresql.conf ]; then
 		-c "CALL SYS.INITIALIZE_BABELFISH('${USERNAME}');"
 	./pg_ctl -D ${BABELFISH_DATA}/ stop
 fi
-
-echo -n ${MIGRATION_MODE};
-
-case ${MIGRATION_MODE} in 
-	single-db) echo -n 'Server is running in singel-db mode';;
-	multi-db) echo -n 'Server is running in multi-db mode';;
-	*) echo -n 'Migration mode is incorrect';;
-esac
-
 # Start postgres engine
 ./postgres -D ${BABELFISH_DATA}/ -i
