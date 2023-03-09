@@ -79,6 +79,22 @@ Then you can install some python libs and use it in your plpython3u functions:
 python3.9 -m pip install numpy
 ```
 
+### Updating ca-certificates
+
+For correct operation of network modules in python, you may need to update ca-certificates
+
+Connect to docker as root:
+
+```cmd
+docker exec -it -u 0 %container_name% bash
+```
+
+Update certificates:
+
+```sh
+update-ca-certificates
+```
+
 ### Advanced Setup
 
 To initialize with a custom username, append `-u my_username` to the `docker run` command where `my_username` is the username desired.
