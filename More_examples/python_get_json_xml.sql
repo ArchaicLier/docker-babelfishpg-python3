@@ -1,6 +1,3 @@
---Update certificate by: python3.9 -m pip install --upgrade certifi
---NOTE: After installing python3-pip certificates updates automatically
-
 --Connect to PostgreSQL>babelfish_db>master_dbo and exec
 
 create extension if not exists plpython3u ;
@@ -10,15 +7,10 @@ create or replace function get_json(url_to_json text)
 as $$
 	import urllib.request
 	from urllib.error import URLError 
-	
-	try:
-		with urllib.request.urlopen(url_to_json) as json_file:
-			return json_file.read().decode('UTF-8')
-	except URLError:
-		#If certificate dont installed
-		import ssl
-		with urllib.request.urlopen(url_to_json,context=ssl._create_unverified_context()) as json_file:
-			return json_file.read().decode('UTF-8')
+
+	with urllib.request.urlopen(url_to_json) as json_file:
+		return json_file.read().decode('UTF-8')
+
 $$ language plpython3u;
 
 select * from
@@ -31,14 +23,9 @@ as $$
 	import urllib.request
 	from urllib.error import URLError 
 
-	try:
-		with urllib.request.urlopen(url_to_xml) as xml_file:
-			return xml_file.read().decode('UTF-8')
-	except URLError:
-		#If certificate dont installed
-		import ssl
-		with urllib.request.urlopen(url_to_xml,context=ssl._create_unverified_context()) as xml_file:
-			return xml_file.read().decode('UTF-8')
+	with urllib.request.urlopen(url_to_xml) as xml_file:
+		return xml_file.read().decode('UTF-8')
+	
 $$ language plpython3u;
 
 select * from 

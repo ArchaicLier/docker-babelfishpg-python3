@@ -110,7 +110,7 @@ COPY --from=0 ${BABELFISH_HOME} .
 RUN apt update && apt install -y --no-install-recommends \
 	libssl1.1 openssl libldap-2.4-2 libxml2 libpam0g uuid libossp-uuid16 \
 	libxslt1.1 libicu66 libpq5 unixodbc \
-	python3.9 libpython3.9
+	python3.9 libpython3.9 ca-certificates
 
 # Enable data volume
 ENV BABELFISH_DATA=/data/babelfish

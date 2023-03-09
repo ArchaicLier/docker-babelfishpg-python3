@@ -79,6 +79,22 @@ apt update && apt install python3-pip
 python3.9 -m pip install numpy
 ```
 
+### Обновление ca-certificates
+
+Для корректной работы сетевых модулей в python может потребоваться обновление ca-certificates
+
+Подключитесь к Docker как root:
+
+```cmd
+docker exec -it -u 0 %container_name% bash
+```
+
+Обновите сертификаты:
+
+```sh
+update-ca-certificates
+```
+
 ### Дополнительные настройки
 
 Для инициализации с пользовательским именем пользователя, добавьте `-u my_username` к `docker run` команде, где `my_username` желаемое имя пользователя.
