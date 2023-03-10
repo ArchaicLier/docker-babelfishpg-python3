@@ -1,4 +1,6 @@
 # docker-babelfishpg-python3
+![Build](https://github.com/ArchaicLier/docker-babelfishpg-python3/actions/workflows/docker-publish.yml/badge.svg)
+
 ENG | [RUS](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/README_RU.md)
 
 [Docker](https://www.docker.com/) image for [Babelfish for PostgreSQL](https://babelfishpg.org/).
