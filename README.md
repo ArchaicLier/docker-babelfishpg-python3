@@ -46,7 +46,7 @@ SELECT * FROM example_db.books;
 
 ### Example Python
 
-Use the [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) script for create simple "Hello world!" functions by first connecting to the PostgreSQL port
+Use the [example_python.sql](https://github.com/ArchaicLier/docker-babelfishpg-python3/blob/main/example_python.sql) script to create simple "Hello world!" functions by first connecting to the PostgreSQL port
 
 Then you can call it as:
 
